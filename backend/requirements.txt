@@ -4,8 +4,5 @@ python-multipart
 soundfile
 noisereduce
 librosa
-numpy
-scipy
-openai-whisper
 faster-whisper
 deep-translator

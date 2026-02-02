@@ -12,14 +12,9 @@ from deep_translator import GoogleTranslator
 STT_BACKEND = "openai_whisper"
 model = None
 
-try:
-    from faster_whisper import WhisperModel
-    STT_BACKEND = "faster_whisper"
-    print(">> Su dung Backend: Faster-Whisper")
-except ImportError:
-    import whisper
-    STT_BACKEND = "openai_whisper"
-    print(">> Su dung Backend: OpenAI-Whisper (Fallback)")
+from faster_whisper import WhisperModel
+STT_BACKEND = "faster_whisper"
+print(">> Su dung Backend: Faster-Whisper")
 
 app = FastAPI()
 app.add_middleware(
@@ -39,15 +34,12 @@ def load_model():
         return
 
     print(f"Dang tai model ({STT_BACKEND}) size '{MODEL_SIZE}'...")
-    if STT_BACKEND == "faster_whisper":
-        model = WhisperModel(
-            MODEL_SIZE,
-            device="cpu",
-            compute_type="int8",
-            cpu_threads=int(os.environ.get("CPU_THREADS", "2")),
-        )
-    else:
-        model = whisper.load_model(MODEL_SIZE)
+    model = WhisperModel(
+        MODEL_SIZE,
+        device="cpu",
+        compute_type="int8",
+        cpu_threads=int(os.environ.get("CPU_THREADS", "2")),
+    )
 
     print("Model da san sang!")
 
@@ -93,19 +85,17 @@ async def transcribe_audio(file: UploadFile = File(...)):
         transcribed_text = ""
         detect_lang = "vi"
 
-        if STT_BACKEND == "faster_whisper":
-            segments, info = model.transcribe(
-                wav_path,
-                language="vi",
-                beam_size=1,
-                vad_filter=True,
-            )
-            detect_lang = info.language or "vi"
-            for seg in segments:
-                transcribed_text += seg.text + " "
-        else:
-            result = model.transcribe(wav_path, language="vi")
-            transcribed_text = result.get("text", "")
+        detect_lang = "vi"
+
+        segments, info = model.transcribe(
+            wav_path,
+            language="vi",
+            beam_size=1,
+            vad_filter=True,
+        )
+        detect_lang = info.language or "vi"
+        for seg in segments:
+            transcribed_text += seg.text + " "
 
         process_time = time.time() - start_time
 

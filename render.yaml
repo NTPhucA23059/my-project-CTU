@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: stt-backend
+    runtime: docker
+    repo: https://github.com/ntphuca23059/my-project-CTU
+    branch: main
+    rootDir: backend
+    plan: free
+    region: singapore
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: PORT
+        value: 10000
