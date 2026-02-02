@@ -62,8 +62,7 @@ function App() {
             <header className="w-full max-w-4xl flex items-center justify-between mb-12 backdrop-blur-sm bg-white/5 p-4 rounded-2xl border border-white/10">
                 <div className="flex items-center gap-4">
                     <div className="bg-white/10 p-2 rounded-lg backdrop-blur-md">
-                        <img src={ctuLogo} alt="CTU Logo" className="w-12 h-12 object-contain" />
-                    </div>
+                        <img src={ctuLogo} alt="CTU Logo" className="w-12 h-12 object-contain" />                    </div>
                     <div>
                         <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                             {t('app.title')}
