@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "Whisper AI Demo",
+    "university": "ĐẠI HỌC CẦN THƠ",
+    "project_info": "Project AI Demo - 2026",
+    "hero_title_1": "Chuyển Đổi Giọng Nói & Video",
+    "hero_title_2": "Thành Văn Bản Tức Thì",
+    "hero_subtitle": "Hỗ trợ microphone trực tiếp và các định dạng video/audio (MP4, MKV, WAV...).",
+    "tab_record": "Ghi âm",
+    "tab_upload": "Tải file",
+    "error_process": "Có lỗi xảy ra khi xử lý file. Vui lòng thử lại.",
+    "result_title": "Kết quả Phân tích",
+    "result_transcription_label": "Văn bản nhận dạng",
+    "result_no_voice": "Không tìm thấy giọng nói trong file này.",
+    "result_language_label": "Ngôn ngữ",
+    "result_input_type_label": "Loại đầu vào",
+    "input_type_mic": "Microphone",
+    "input_type_file": "Tải lên File",
+    "result_placeholder": "Kết quả sẽ hiển thị ở đây...",
+    "translate_to": "Dịch sang",
+    "lang_en": "Tiếng Anh",
+    "lang_vi": "Tiếng Việt",
+    "translating": "Đang dịch...",
+    "translation_failed": "Dịch thất bại. Vui lòng thử lại."
+  },
+  "recorder": {
+    "error_access": "Không thể truy cập microphone. Vui lòng kiểm tra quyền truy cập.",
+    "start": "Bắt đầu ghi âm",
+    "stop": "Dừng ghi âm",
+    "analyzing": "Đang phân tích giọng nói..."
+  },
+  "upload": {
+    "error_invalid_type": "Vui lòng chọn file âm thanh hoặc video hợp lệ (mp3, wav, mp4, mkv...)",
+    "drag_drop_title": "Kéo thả file Video/Audio vào đây",
+    "drag_drop_subtitle": "hoặc click để chọn file (MP4, MKV, MP3, WAV...)",
+    "extracting": "Đang trích xuất & dịch...",
+    "start_analysis": "Bắt đầu phân tích"
+  },
+  "common": {
+    "processing": "Đang xử lý..."
+  }
+}

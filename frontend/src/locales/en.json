@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "Whisper AI Demo",
+    "university": "CAN THO UNIVERSITY",
+    "project_info": "Project AI Demo - 2026",
+    "hero_title_1": "Convert Voice & Video",
+    "hero_title_2": "To Text Instantly",
+    "hero_subtitle": "Supports live microphone and video/audio formats (MP4, MKV, WAV...).",
+    "tab_record": "Record",
+    "tab_upload": "Upload File",
+    "error_process": "An error occurred while processing the file. Please try again.",
+    "result_title": "Analysis Result",
+    "result_transcription_label": "Transcription",
+    "result_no_voice": "No voice found in this file.",
+    "result_language_label": "Language",
+    "result_input_type_label": "Input Type",
+    "input_type_mic": "Microphone",
+    "input_type_file": "File Upload",
+    "result_placeholder": "Results will appear here...",
+    "translate_to": "Translate to",
+    "lang_en": "English",
+    "lang_vi": "Vietnamese",
+    "translating": "Translating...",
+    "translation_failed": "Translation failed. Please try again."
+  },
+  "recorder": {
+    "error_access": "Cannot access microphone. Please check permissions.",
+    "start": "Start Recording",
+    "stop": "Stop Recording",
+    "analyzing": "Analyzing voice..."
+  },
+  "upload": {
+    "error_invalid_type": "Please select a valid audio or video file (mp3, wav, mp4, mkv...)",
+    "drag_drop_title": "Drag & Drop Video/Audio here",
+    "drag_drop_subtitle": "or click to select file (MP4, MKV, MP3, WAV...)",
+    "extracting": "Extracting & Translating...",
+    "start_analysis": "Start Analysis"
+  },
+  "common": {
+    "processing": "Processing..."
+  }
+}
