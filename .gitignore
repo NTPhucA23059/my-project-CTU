@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+__pycache__/
+venv/
+env/
+.env
+
+# Media
+*.mp4
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.avi
+
+# Build
+dist/
+build/
+*.exe
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
