@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import AudioRecorder from './components/AudioRecorder'
 import FileUpload from './components/FileUpload'
+import ctuLogo from "../public/logo.png";
 import { transcribeAudio, translateText } from './services/api'
 import { Bot, Sparkles, FileText, Activity, UploadCloud, Mic, Languages, ArrowRight } from 'lucide-react'
 
@@ -61,7 +62,7 @@ function App() {
             <header className="w-full max-w-4xl flex items-center justify-between mb-12 backdrop-blur-sm bg-white/5 p-4 rounded-2xl border border-white/10">
                 <div className="flex items-center gap-4">
                     <div className="bg-white/10 p-2 rounded-lg backdrop-blur-md">
-                        <img src="/logo.png" alt="CTU Logo" className="w-12 h-12 object-contain" />
+                        <img src={ctuLogo} alt="CTU Logo" className="w-12 h-12 object-contain" />
                     </div>
                     <div>
                         <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
@@ -161,7 +162,7 @@ function App() {
                                                     <span className="text-slate-500 italic">{t('app.result_no_voice')}</span>
                                                 )}
                                             </div>
-                                            
+
                                             {/* Translation Section */}
                                             {transcription.text && (
                                                 <div className="mt-4 pt-4 border-t border-white/5">
@@ -169,14 +170,14 @@ function App() {
                                                         <Languages className="w-4 h-4 text-emerald-400" />
                                                         <span className="text-xs font-bold tracking-wider text-slate-500 uppercase">{t('app.translate_to')}</span>
                                                         <div className="flex gap-2 ml-2">
-                                                            <button 
+                                                            <button
                                                                 onClick={() => handleTranslate('en')}
                                                                 disabled={isTranslating}
                                                                 className="px-3 py-1 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-xs font-medium text-slate-300 transition-colors disabled:opacity-50"
                                                             >
                                                                 {t('app.lang_en')}
                                                             </button>
-                                                            <button 
+                                                            <button
                                                                 onClick={() => handleTranslate('vi')}
                                                                 disabled={isTranslating}
                                                                 className="px-3 py-1 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg text-xs font-medium text-slate-300 transition-colors disabled:opacity-50"
@@ -185,7 +186,7 @@ function App() {
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     {translatedText && (
                                                         <div className="relative animate-in fade-in slide-in-from-top-2 duration-500">
                                                             <div className="absolute -left-3 top-6 bottom-0 w-1 bg-gradient-to-b from-emerald-500/50 to-transparent rounded-full"></div>
@@ -194,7 +195,7 @@ function App() {
                                                             </div>
                                                         </div>
                                                     )}
-                                                    
+
                                                     {isTranslating && (
                                                         <div className="flex items-center gap-2 text-sm text-slate-400 animate-pulse mt-2">
                                                             <Activity className="w-4 h-4 animate-spin" /> {t('app.translating')}
