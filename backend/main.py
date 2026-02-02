@@ -1,5 +1,6 @@
 import os
 import shutil
+import uvicorn
 import time
 import subprocess
 from fastapi import FastAPI, UploadFile, File, HTTPException
@@ -68,7 +69,9 @@ def ensure_wav_16k(input_path: str) -> str:
 @app.get("/")
 def read_root():
     return {"message": f"STT API running with {STT_BACKEND} (model={MODEL_SIZE})"}
-
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 @app.post("/transcribe")
 async def transcribe_audio(file: UploadFile = File(...)):
     try:
@@ -137,6 +140,7 @@ async def translate_text(request: TranslationRequest):
         return {"translated_text": translated}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 
 if __name__ == "__main__":
